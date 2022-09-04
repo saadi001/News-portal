@@ -18,6 +18,9 @@ body{
 .l-height{
     line-height: 7px;
 }
+.ul{
+    text-decoration: underline;
+}
 
 @media only screen and (max-width: 576px){
     .headline-image{
