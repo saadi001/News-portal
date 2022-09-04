@@ -54,12 +54,23 @@ const displayNews = (allNews) =>{
         `;
         newsContainer.appendChild(newsDiv);
        
-    })
+    });
+    toggleSpinner(false);
 }
 
 const searchNews = (searchId) => {
-    
     loadNews(searchId);
+    toggleSpinner(true);
 }
 
-// loadNews('04');
+const toggleSpinner = isLoading =>{
+    const loaderSection = document.getElementById('loader');
+    if(isLoading){
+        loaderSection.classList.remove('d-none');
+    }
+    else{
+        loaderSection.classList.add('d-none')
+    }
+}
+
+loadNews('08');
