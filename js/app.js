@@ -14,6 +14,13 @@ const displayNews = (allNews) =>{
     }else{
         noNewsDiv.classList.add('d-none')
     }
+
+    // item found 
+    const itemFound = document.getElementById('found-section');
+    
+    const item = allNews.length;
+    itemFound.innerText = item;
+
     // append the news 
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = ``;
@@ -23,11 +30,11 @@ const displayNews = (allNews) =>{
         const newsDiv = document.createElement('div');
         newsDiv.innerHTML = `
         <div class="row g-0 p-3 my-2 bg-white rounded">
-        <div class="col-12  col-md-3 "><img class="img-fluid headline-image" src="${news.thumbnail_url}" alt=""></div>
+        <div class="col-12  col-md-3 "><img class="img-fluid headline-image h-100 w-100" src="${news.thumbnail_url}" alt=""></div>
         <div class="col-md-9 p-3">
           <div>
             <h3 class="fw-bold">${news.title}</h3>
-            <p class="py-1 text-muted">${news.details}</p>
+            <p class="py-1 text-muted">${news.details.slice(0,300)}...</p>
           </div>
           <div class="d-flex justify-content-between align-items-center flex-wrap">
             <div class="d-flex">
@@ -43,11 +50,11 @@ const displayNews = (allNews) =>{
               <div class=" mx-1">View: ${news.total_view}</div>
             </div>
   
-            <div class="d-flex">
+            <div class="mx-2">
               <div>Ratings: ${news.rating.number}</div>
             </div>
   
-            <div><i class="fa-solid fa-circle-right text-primary"></i></div>
+            <div class="mx-2"><i class="fa-solid fa-circle-right text-primary"></i></div>
           </div>
         </div>
       </div>
@@ -73,4 +80,4 @@ const toggleSpinner = isLoading =>{
     }
 }
 
-loadNews('08');
+loadNews('01');
