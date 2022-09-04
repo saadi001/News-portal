@@ -92,6 +92,11 @@ const displayModalDetail = (modalNews) =>{
     modalTitle.innerText = modalNews.title;
     const modalDetails = document.getElementById('news-detail');
     modalDetails.innerText = modalNews.details;
+    const authorView = document.getElementById('author-view');
+    authorView.innerHTML = `
+    <div class="mx-2">Author: ${modalNews.author.name}</div>
+    <div class="mx-2">View: ${modalNews.total_view}</div>
+    `;
 }
 
 loadNews('01');
