@@ -3,8 +3,24 @@
 
 
 body{
-    background-color:  #F6F6F7;;
+    background-color:  #7474a5;;
 }
 .navv{
     font-family: 'Roboto Slab', serif;
+}
+.pointers{
+    cursor: pointer;
+}
+.small-photo{
+    height: 25px;
+    width: 25px;
+}
+.l-height{
+    line-height: 7px;
+}
+
+@media only screen and (max-width: 576px){
+    .headline-image{
+        width: 100%;
+    }
 }
